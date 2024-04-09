@@ -59,4 +59,5 @@ jobs:
         with:
           input1: lorem
           input2: ipsum
-          environment: true
+        env:
+          CUSTOM_ENV: lorem

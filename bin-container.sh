@@ -1,11 +1,14 @@
 #!/bin/bash
 
-# Assuming printDetails is controlled by INPUT_DETAILS environment variable
-if [[ "$INPUT_DETAILS" == "true" ]]; then
-    echo "Working directory: $(pwd)"
-    echo "Home directory: $HOME"
-    echo "Environment:"
-    printenv
+echo "Working directory: $(pwd)"
+echo "Home directory: $HOME"
+echo "Environment:"
+printenv
+
+# check if env CUSTOM_ENV is "lorem" or ipsum or dolor
+if [[ "$CUSTOM_ENV" != "lorem" && "$CUSTOM_ENV" != "ipsum" && "$CUSTOM_ENV" != "dolor" ]]; then
+    echo "Invalid CUSTOM_ENV value: $CUSTOM_ENV"
+    exit 1
 fi
 
 # Validate input1
